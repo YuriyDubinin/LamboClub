@@ -18,11 +18,22 @@ function postData(form) {
         const formData = new FormData(form);
 
         request.open("POST", "server.php");
-        request.send(formData);
+        request.setRequestHeader("Content-type", "application/json");
+
+        const object = {};
+
+        formData.forEach((value, key) => {
+            object[key] = value;
+        });
+
+        const json = JSON.stringify(object);
+
+        request.send(json);
 
         request.addEventListener("load", () => {
             if (request.status === 200) {
                 console.log(request.response);
+                form.reset();
             } else {
                 console.log("error: something is wrong..");
             }
