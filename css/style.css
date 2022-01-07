@@ -1,0 +1,1071 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Open+Sans+Condensed:wght@300&family=Style+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+/* Reset CSS */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/* Templates */
+/* intro-text is general settings for pop-up text in the 'main-screen' block*/
+.intro-text {
+  font-family: "Open Sans Condensed";
+  position: absolute;
+  opacity: 0;
+}
+
+/* main-card is card with title, icon, text and outline. Outline is the last element of the card, on which it ends. Outline made by pseudo-element of the <span> tag. The properties of the pseudo-element are discribed in .main-card */
+.main-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  /* Media-quiries */
+}
+
+.main-card:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-card h2 {
+  font-family: "Lato";
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.main-card img {
+  max-width: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-card p {
+  font-family: "Lato";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  text-align: center;
+}
+
+.main-card span::after {
+  display: block;
+  content: "";
+  height: 0.5px;
+  width: 50%;
+  background-color: #7b8e98;
+}
+
+@media screen and (min-width: 0px) {
+  .main-card span::after {
+    margin: 30px auto 30px auto;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-card span::after {
+    margin: 30px auto 50px auto;
+  }
+}
+
+/* main-btn is general settins for the buttons */
+.main-btn {
+  overflow: hidden;
+  color: #7b8e98;
+  font-family: "Lato";
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 15px 40px;
+  border: 1px solid #7b8e98;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.main-btn:hover {
+  -webkit-box-shadow: 0 0 5px #7b8e98;
+          box-shadow: 0 0 5px #7b8e98;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.main-btn span {
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.main-btn span::after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.main-btn:hover span {
+  padding-right: 25px;
+}
+
+.main-btn:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Styles */
+/* wrapper */
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6))), url(/img/fone.jpg) repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6)), url(/img/fone.jpg) repeat;
+}
+
+/* container, limits the width of content part */
+.container {
+  margin: 0 auto;
+  max-width: 1500px;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .container {
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    max-width: 630px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .container {
+    max-width: 1014px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1270px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+
+/* main */
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  color: #7b8e98;
+  margin: 77px 0 0 0;
+  /* Media-quiries */
+}
+
+.main__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main__main-info {
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main__main-info {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main__main-info {
+    display: block;
+  }
+}
+
+.main__main-conclusion {
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main__main-conclusion {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main__main-conclusion {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 0px) {
+  .main {
+    margin: 50px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    margin: 77px 0 0 0;
+  }
+}
+
+/* main constituens */
+/* main-screen */
+.main-screen {
+  /* Text animation */
+  /* top-left-text-emergence */
+  /* top-left-text animation for min-width: 767px*/
+  /* top-left-text animation for min-width: 960px*/
+  /* bottom-left-text-emergence */
+  /* bottom-left-text animation for min-width: 0px*/
+  /* bottom-left-text animation for min-width: 767px*/
+  /* bottom-left-text animation for min-width: 960px*/
+  /* right-text-emergence */
+  /* right-text-emergence animation for min-width: 767px*/
+  /* right-text-emergence animation for min-width: 960px*/
+}
+
+.main-screen__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.main-screen__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-height: 600px;
+}
+
+.main-screen__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main-screen__top-left-text {
+  max-width: 350px;
+  font-size: 28px;
+  line-height: 36px;
+  top: 10%;
+  left: 8%;
+  -webkit-animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+          animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .main-screen__top-left-text {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-screen__top-left-text {
+    display: block;
+    font-size: 22px;
+    max-width: 250px;
+    line-height: 24px;
+    -webkit-animation: top-left-text-emergence-767 3s ease 1 normal 0s forwards;
+            animation: top-left-text-emergence-767 3s ease 1 normal 0s forwards;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-screen__top-left-text {
+    font-size: 28px;
+    max-width: 350px;
+    line-height: 36px;
+    -webkit-animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+            animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+  }
+}
+
+.main-screen__bottom-left-text {
+  max-width: 200px;
+  font-size: 22px;
+  bottom: 23%;
+  left: 12%;
+  -webkit-animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+          animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .main-screen__bottom-left-text {
+    font-size: 20px;
+    -webkit-animation: bottom-left-text-emergence-0 3s ease normal 0.8s forwards;
+            animation: bottom-left-text-emergence-0 3s ease normal 0.8s forwards;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-screen__bottom-left-text {
+    font-size: 22px;
+    -webkit-animation: bottom-left-text-emergence-767 3s ease 1 normal 1.2s forwards;
+            animation: bottom-left-text-emergence-767 3s ease 1 normal 1.2s forwards;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-screen__bottom-left-text {
+    font-size: 22px;
+    -webkit-animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+            animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+  }
+}
+
+.main-screen__right-text {
+  max-width: 230px;
+  font-size: 22px;
+  line-height: 30px;
+  top: 20%;
+  right: 7%;
+  -webkit-animation: right-text-emergence-960 3s ease 1 normal 0.8s forwards;
+          animation: right-text-emergence-960 3s ease 1 normal 0.8s forwards;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .main-screen__right-text {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-screen__right-text {
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    -webkit-animation: right-text-emergence-767 3s ease normal 0.8s forwards;
+            animation: right-text-emergence-767 3s ease normal 0.8s forwards;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-screen__right-text {
+    font-size: 22px;
+    line-height: 30px;
+    -webkit-animation: right-text-emergence-960 3s ease normal 0.8s forwards;
+            animation: right-text-emergence-960 3s ease normal 0.8s forwards;
+  }
+}
+
+@-webkit-keyframes top-left-text-emergence-767 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 5%;
+  }
+  100% {
+    opacity: 1;
+    top: 15%;
+    left: 5%;
+  }
+}
+
+@keyframes top-left-text-emergence-767 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 5%;
+  }
+  100% {
+    opacity: 1;
+    top: 15%;
+    left: 5%;
+  }
+}
+
+@-webkit-keyframes top-left-text-emergence-960 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 8%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+    left: 8%;
+  }
+}
+
+@keyframes top-left-text-emergence-960 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 8%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+    left: 8%;
+  }
+}
+
+@-webkit-keyframes bottom-left-text-emergence-0 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 3%;
+  }
+  100% {
+    opacity: 1;
+    top: 18%;
+    left: 3%;
+  }
+}
+
+@keyframes bottom-left-text-emergence-0 {
+  0% {
+    opacity: 0;
+    top: 0%;
+    left: 3%;
+  }
+  100% {
+    opacity: 1;
+    top: 18%;
+    left: 3%;
+  }
+}
+
+@-webkit-keyframes bottom-left-text-emergence-767 {
+  0% {
+    opacity: 0;
+    bottom: 23%;
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 23%;
+    left: 7%;
+  }
+}
+
+@keyframes bottom-left-text-emergence-767 {
+  0% {
+    opacity: 0;
+    bottom: 23%;
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 23%;
+    left: 7%;
+  }
+}
+
+@-webkit-keyframes bottom-left-text-emergence-960 {
+  0% {
+    opacity: 0;
+    bottom: 23%;
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 23%;
+    left: 12%;
+  }
+}
+
+@keyframes bottom-left-text-emergence-960 {
+  0% {
+    opacity: 0;
+    bottom: 23%;
+    left: 0%;
+  }
+  100% {
+    opacity: 1;
+    bottom: 23%;
+    left: 12%;
+  }
+}
+
+@-webkit-keyframes right-text-emergence-767 {
+  0% {
+    opacity: 0;
+    top: 10%;
+    right: 0%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+    right: 3%;
+  }
+}
+
+@keyframes right-text-emergence-767 {
+  0% {
+    opacity: 0;
+    top: 10%;
+    right: 0%;
+  }
+  100% {
+    opacity: 1;
+    top: 10%;
+    right: 3%;
+  }
+}
+
+@-webkit-keyframes right-text-emergence-960 {
+  0% {
+    opacity: 0;
+    top: 20%;
+    right: 0%;
+  }
+  100% {
+    opacity: 1;
+    top: 20%;
+    right: 6%;
+  }
+}
+
+@keyframes right-text-emergence-960 {
+  0% {
+    opacity: 0;
+    top: 20%;
+    right: 0%;
+  }
+  100% {
+    opacity: 1;
+    top: 20%;
+    right: 6%;
+  }
+}
+
+/* main-title, also this contains a description of the animation icon-emergence*/
+.main-title {
+  /* Icon-animation */
+  /* icon-emergemce */
+}
+
+.main-title__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-title__picture {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31%;
+          flex: 0 0 31%;
+  max-height: 480px;
+  opacity: 1;
+  /* Media-quiries */
+}
+
+.main-title__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 0px) {
+  .main-title__picture {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-title__picture {
+    display: block;
+  }
+}
+
+.main-title__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 38%;
+          flex: 0 0 38%;
+  overflow: hidden;
+  max-height: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main-title__body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-title__body {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 38%;
+            flex: 1 1 38%;
+  }
+}
+
+.main-title__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 42%;
+          flex: 1 1 42%;
+}
+
+.main-title__title {
+  margin: 20px 0 10px 0;
+}
+
+.main-title__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-animation: icon-emergence 3s ease 1 normal 2s forwards;
+          animation: icon-emergence 3s ease 1 normal 2s forwards;
+}
+
+.main-title__text {
+  margin: 10px 0 45px 0;
+  padding: 0 20px;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main-title__text {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-title__text {
+    margin: 10px 0 45px 0;
+  }
+}
+
+.main-title__outline {
+  /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+}
+
+.main-title__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  /* Media-quiries */
+}
+
+.main-title__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 0px) {
+  .main-title__image {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-title__image {
+    display: block;
+  }
+}
+
+@-webkit-keyframes icon-emergence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes icon-emergence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* main-video */
+.main-video__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main-video__video {
+  position: relative;
+  max-width: 69%;
+  /* Media-quiries */
+}
+
+.main-video__video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 0px) {
+  .main-video__video {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-video__video {
+    max-width: 69%;
+  }
+}
+
+.main-video__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31%;
+          flex: 0 0 31%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main-video__body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin: 0 0 15px 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-video__body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 31%;
+            flex: 0 0 31%;
+    margin: 0;
+  }
+}
+
+.main-video__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-video__title {
+  margin: 50px 0 10px 0;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0px) {
+  .main-video__title {
+    margin: 20px 0 10px 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .main-video__title {
+    margin: 50px 0 10px 0;
+  }
+}
+
+.main-video__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-animation: icon-emergence 3s ease 1 normal 2s forwards;
+          animation: icon-emergence 3s ease 1 normal 2s forwards;
+}
+
+.main-video__text {
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.main-video__outline {
+  /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+}
+
+.main-video__button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-video__link {
+  width: 190px;
+}
+
+/* main-info */
+.main-info {
+  /* Media-quiries */
+}
+
+.main-info__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-info__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31%;
+          flex: 0 0 31%;
+}
+
+.main-info__title {
+  margin: 50px 0 10px 0;
+}
+
+.main-info__icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-animation: icon-emergence 3s ease 1 normal 2s forwards;
+          animation: icon-emergence 3s ease 1 normal 2s forwards;
+}
+
+.main-info__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.main-info__outline {
+  /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+}
+
+@media screen and (min-width: 0px) {
+  .main-info {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .main-info {
+    display: block;
+  }
+}
+
+/* main-conclusion */
+.main-conclusion__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-conclusion__options {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 60%;
+          flex: 1 1 60%;
+  padding: 30px 15px 30px 20px;
+}
+
+.main-conclusion__list {
+  font-family: "Lato";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.main-conclusion__list li {
+  background: url(/img/icons/check-1.png) 0 0 no-repeat;
+  padding: 0 0 0 40px;
+  margin: 0 0 20px 0;
+}
+
+.main-conclusion__list li:last-child {
+  margin: 0;
+}
+
+.main-conclusion__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 31%;
+          flex: 0 0 31%;
+  height: 500px;
+}
+
+.main-conclusion__image img {
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

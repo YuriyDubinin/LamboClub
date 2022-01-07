@@ -1,0 +1,280 @@
+/* Styles */
+/* body */
+body {
+  /* Media-quiries */
+}
+
+@media screen and (max-width: 768px) {
+  body.lock {
+    overflow: hidden;
+  }
+}
+
+/* header */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  background-color: black;
+  -webkit-animation: header-emergence 3s ease 1 normal 2s forwards;
+          animation: header-emergence 3s ease 1 normal 2s forwards;
+  /* Header-animation */
+  /* header-emergence, a white line appears under the header */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 2;
+}
+
+.header__row {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  /* Media-quiries */
+}
+
+@media screen and (max-width: 768px) {
+  .header__row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    height: 50px;
+  }
+}
+
+.header__burger {
+  display: none;
+  margin: 0 0 0 10px;
+  /* burger in the pressed state */
+  /* Media-quiries */
+}
+
+.header__burger::before, .header__burger::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger span {
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 9px;
+  width: 100%;
+  height: 2px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__burger.active::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 9px;
+}
+
+.header__burger.active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: 9px;
+}
+
+.header__burger.active span {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+@media screen and (max-width: 768px) {
+  .header__burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.header__navigation {
+  /* Media-quiries */
+}
+
+@media screen and (max-width: 768px) {
+  .header__navigation {
+    position: fixed;
+    top: -100%;
+    left: 10;
+    width: 100%;
+    overflow: auto;
+    background-color: #222222;
+    padding: 70px 0 0 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  .header__navigation.active {
+    top: 0;
+  }
+}
+
+.header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  z-index: 2;
+  /* Media-quiries */
+}
+
+@media screen and (max-width: 768px) {
+  .header__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header__list li {
+    margin: 0 0 25px 0;
+  }
+}
+
+.header__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 50px;
+  /* Media-quiries */
+}
+
+.header__link a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: whitesmoke;
+  -webkit-transition: text-shadow 0.8s ease 0s;
+  transition: text-shadow 0.8s ease 0s;
+}
+
+.header__link a:hover {
+  text-shadow: 0 0 8px whitesmoke;
+}
+
+.header__link a::after {
+  display: block;
+  content: "";
+  margin: 3px 0 0 0;
+  height: 0.5px;
+  width: 0%;
+  background-color: whitesmoke;
+  -webkit-transition: width 0.4s ease 0s;
+  transition: width 0.4s ease 0s;
+}
+
+.header__link a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header__link {
+    padding: 0 10px;
+  }
+}
+
+.header__logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 150px;
+          flex: 0 0 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Media-quiries */
+}
+
+.header__logo img {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    display: none;
+  }
+}
+
+@-webkit-keyframes header-emergence {
+  0% {
+    -webkit-box-shadow: 0 0 0px whitesmoke;
+            box-shadow: 0 0 0px whitesmoke;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0.5px whitesmoke;
+            box-shadow: 0 0 0.5px whitesmoke;
+  }
+}
+
+@keyframes header-emergence {
+  0% {
+    -webkit-box-shadow: 0 0 0px whitesmoke;
+            box-shadow: 0 0 0px whitesmoke;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0.5px whitesmoke;
+            box-shadow: 0 0 0.5px whitesmoke;
+  }
+}
+
+/* active-tab responsible for the graphical dislay of the active tab in header (navigation) */
+.active-tab {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.active-tab a {
+  text-shadow: 0 0 8px whitesmoke;
+}
+
+.active-tab a::after {
+  display: block;
+  content: "";
+  height: 0.5px;
+  width: 100%;
+  background-color: whitesmoke;
+}

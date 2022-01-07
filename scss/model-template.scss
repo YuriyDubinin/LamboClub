@@ -1,0 +1,228 @@
+// Variables
+$primary-font: "Lato";
+$auxiliary-font: "Open Sans Condensed";
+$header-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+$primary-color: #7b8e98;
+$header-background-color: black;
+$header-link-color: whitesmoke;
+$pulsating-text-color: #a04e5a;
+
+/* Styles */
+
+/* container, standart width changed */
+.container {
+    max-width: 1000px;
+}
+
+/* main */
+.main {
+    &__model-template {
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            margin: 20px 0 0 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin: 40px 0 0 0;
+        }
+    }
+}
+
+/* main-constituens */
+
+/* model-template */
+.model-template {
+    &__row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        h1 {
+            font-family: $primary-font;
+            font-size: 40px;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 7px;
+
+            position: relative;
+            animation: slide-left 1.1s ease 1 normal 0s forwards,
+                default-emergence 1.6s ease-in-out 1 normal 0s forwards;
+
+            /* Media-quiries */
+
+            @media screen and (min-width: 0px) {
+                margin: 0 0 10px 0;
+                font-size: 28px;
+            }
+
+            @media screen and (min-width: 320px) {
+                font-size: 32px;
+            }
+
+            @media screen and (min-width: 640px) {
+                margin: 0 0 15px 0;
+                font-size: 40px;
+            }
+        }
+    }
+
+    &__subtitle {
+        margin: 0 0 30px 0;
+        opacity: 0;
+
+        animation: default-emergence 1.3s ease 1 normal 0.9s forwards;
+
+        h2 {
+            font-family: $auxiliary-font;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Media-quirries */
+        @media screen and (min-width: 0px) {
+            margin: 0 0 15px 0;
+        }
+
+        @media screen and (min-width: 768px) {
+            margin: 0 0 30px 0;
+        }
+    }
+
+    &__image {
+        flex: 0 0 100%;
+        max-width: 850px;
+        padding: 0 5px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        overflow: hidden;
+        max-width: 750px;
+        padding: 20px 5px;
+        opacity: 0;
+        position: relative;
+
+        animation: sliding-right 1.1s ease 1 normal 1.1s forwards,
+            default-emergence 1.3s ease-in-out 1 normal 1.4s forwards;
+
+        p {
+            font-family: $auxiliary-font;
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 40px;
+        }
+
+        /* Media-quiries */
+        @media screen and (min-width: 0px) {
+            padding: 10px 5px;
+
+            p {
+                line-height: 30px;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            padding: 20px 5px;
+
+            p {
+                line-height: 40px;
+            }
+        }
+    }
+
+    &__specifications {
+        max-width: 720px;
+    }
+
+    &__list {
+        padding: 15px 5px 25px 5px;
+        font-family: $primary-font;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        opacity: 0;
+
+        animation: default-emergence 1.3s ease-in-out 1 normal 2s forwards;
+
+        li {
+            padding: 0 0 0 40px;
+            margin: 0 0 15px 0;
+            background: url(/img/icons/check-1.png) 0 -2px no-repeat;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &__button {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 20%;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            position: relative;
+            left: 0;
+        }
+        @media screen and (min-width: 768px) {
+            position: relative;
+            left: 20%;
+        }
+    }
+
+    &__link {
+        width: 190px;
+    }
+
+    /* Animation */
+    /* slide-left */
+    @keyframes slide-left {
+        0% {
+            position: relative;
+            top: 0;
+            left: -20%;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    /* siding-right*/
+    @keyframes sliding-right {
+        0% {
+            position: relative;
+            top: 0;
+            right: -20%;
+        }
+        100% {
+            top: 0;
+            right: 0;
+        }
+    }
+
+    /* default-emergence */
+    @keyframes default-emergence {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

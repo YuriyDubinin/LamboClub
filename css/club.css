@@ -1,0 +1,452 @@
+/* Styles */
+/* main */
+/* main constituens */
+/* club */
+.club__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.club__club-map {
+  margin: 20px 0;
+}
+
+/* club-welcome-screen */
+.club-welcome-screen {
+  /* text animation */
+  /* default-emergence */
+  /* club-welcome-screen-title-emergence */
+}
+
+.club-welcome-screen__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.club-welcome-screen__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-height: 680px;
+}
+
+.club-welcome-screen__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.8;
+}
+
+.club-welcome-screen__subtitle {
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  opacity: 0;
+  -webkit-animation: text-default-emergence 2s ease 1 normal 1s forwards;
+          animation: text-default-emergence 2s ease 1 normal 1s forwards;
+  /* Media-quries */
+}
+
+.club-welcome-screen__subtitle p {
+  font-family: "Open Sans Condensed";
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+@media screen and (min-width: 0px) {
+  .club-welcome-screen__subtitle {
+    top: 70%;
+    left: 3%;
+  }
+  .club-welcome-screen__subtitle p {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .club-welcome-screen__subtitle {
+    top: 19%;
+    left: 3%;
+  }
+  .club-welcome-screen__subtitle p {
+    font-size: 20px;
+    letter-spacing: 8px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .club-welcome-screen__subtitle {
+    top: 10%;
+    left: 3%;
+  }
+  .club-welcome-screen__subtitle p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-welcome-screen__subtitle {
+    top: 30%;
+    left: 3%;
+  }
+  .club-welcome-screen__subtitle p {
+    font-size: 20px;
+  }
+}
+
+.club-welcome-screen__title {
+  position: absolute;
+  top: 35%;
+  left: 3%;
+  max-width: 370px;
+  opacity: 0;
+  -webkit-animation: club-welcome-screen-title-emergence 1s ease 1 normal 0.2s forwards, text-default-emergence 4s ease 1 normal 0s forwards;
+          animation: club-welcome-screen-title-emergence 1s ease 1 normal 0.2s forwards, text-default-emergence 4s ease 1 normal 0s forwards;
+  /* Media-quries */
+}
+
+.club-welcome-screen__title p {
+  font-family: "Open Sans Condensed";
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  line-height: 70px;
+}
+
+@media screen and (min-width: 0px) {
+  .club-welcome-screen__title {
+    top: 1%;
+    left: 3%;
+  }
+  .club-welcome-screen__title p {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .club-welcome-screen__title p {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-welcome-screen__title {
+    top: 35%;
+    left: 3%;
+  }
+  .club-welcome-screen__title p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .club-welcome-screen__title p {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .club-welcome-screen__title p {
+    font-size: 60px;
+    line-height: 70px;
+  }
+}
+
+@-webkit-keyframes text-default-emergence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-default-emergence {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes club-welcome-screen-title-emergence {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 3%;
+  }
+}
+
+@keyframes club-welcome-screen-title-emergence {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 3%;
+  }
+}
+
+/* club-description */
+.club-description {
+  /* The icon-emergence animation itself is described in style.scss in the main-title block. */
+}
+
+.club-description__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.club-description__item {
+  font-size: 15px;
+}
+
+.club-description__title {
+  margin: 50px 0 10px 0;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .club-description__title {
+    margin: 30px 0 10px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-description__title {
+    margin: 50px 0 10px 0;
+  }
+}
+
+.club-description__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-animation: icon-emergence 3s ease 1 normal 2s forwards;
+          animation: icon-emergence 3s ease 1 normal 2s forwards;
+}
+
+.club-description__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.club-description__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
+  /* Media-quiries */
+}
+
+.club-description__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 0) {
+  .club-description__image {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-description__image {
+    display: block;
+  }
+}
+
+/* club-additional-information */
+.club-additional-information {
+  /* Pay attention! Item has a slightly different structure, one does not have a body, the second has, this is done so that the body presses the button to the bottom */
+  /* Pay attention! There are only two items in html, one has an outline, but no button. The second item has the opposite - it has a button, but no outline. */
+}
+
+.club-additional-information__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-height: 500px;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .club-additional-information__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-height: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-additional-information__row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    max-height: 500px;
+  }
+}
+
+.club-additional-information__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  min-height: 500px;
+  /* Media-quiries */
+}
+
+.club-additional-information__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (min-width: 0) {
+  .club-additional-information__image {
+    min-height: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-additional-information__image {
+    min-height: 500px;
+  }
+}
+
+.club-additional-information__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 35%;
+          flex: 0 0 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.club-additional-information__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.club-additional-information__title {
+  margin: 50px 0 10px 0;
+  /* Media-quiries */
+}
+
+@media screen and (min-width: 0) {
+  .club-additional-information__title {
+    margin: 30px 0 10px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .club-additional-information__title {
+    margin: 50px 0 10px 0;
+  }
+}
+
+.club-additional-information__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-animation: icon-emergence 3s ease 1 normal 2s forwards;
+          animation: icon-emergence 3s ease 1 normal 2s forwards;
+}
+
+.club-additional-information__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 10px 0;
+  padding: 0 20px;
+}
+
+.club-additional-information__button {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.club-additional-information__link {
+  width: 190px;
+}
+
+/* club-map */
+.club-map__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.club-map__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 1000px;
+          flex: 0 1 1000px;
+}
+
+.club-map__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}

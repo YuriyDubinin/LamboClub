@@ -1,0 +1,740 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Open+Sans+Condensed:wght@300&family=Style+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+/* Reset CSS */
+@import "_nullstyle.scss";
+
+// Variables
+$primary-font: "Lato";
+$auxiliary-font: "Open Sans Condensed";
+$header-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+$primary-color: #7b8e98;
+$header-background-color: black;
+$header-link-color: whitesmoke;
+$pulsating-text-color: #a04e5a;
+
+/* Templates */
+
+/* intro-text is general settings for pop-up text in the 'main-screen' block*/
+.intro-text {
+    font-family: $auxiliary-font;
+    position: absolute;
+    opacity: 0;
+}
+
+/* main-card is card with title, icon, text and outline. Outline is the last element of the card, on which it ends. Outline made by pseudo-element of the <span> tag. The properties of the pseudo-element are discribed in .main-card */
+.main-card {
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.4s ease 0s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        font-family: $primary-font;
+        font-size: 20px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    img {
+        max-width: 50px;
+        object-fit: cover;
+    }
+
+    p {
+        font-family: $primary-font;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    span {
+        &::after {
+            display: block;
+            content: "";
+
+            height: 0.5px;
+            width: 50%;
+            background-color: $primary-color;
+        }
+    }
+
+    /* Media-quiries */
+
+    @media screen and (min-width: 0px) {
+        span {
+            &::after {
+                margin: 30px auto 30px auto;
+            }
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        span {
+            &::after {
+                margin: 30px auto 50px auto;
+            }
+        }
+    }
+}
+
+/* main-btn is general settins for the buttons */
+.main-btn {
+    overflow: hidden;
+    color: $primary-color;
+    font-family: $primary-font;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 15px 40px;
+    border: 1px solid $primary-color;
+
+    transition: all 0.4s ease 0s;
+
+    &:hover {
+        box-shadow: 0 0 5px $primary-color;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    span {
+        cursor: pointer;
+        position: relative;
+        transition: all 0.5s ease 0s;
+    }
+
+    span::after {
+        content: "\00bb";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: all 0.5s ease 0s;
+    }
+
+    &:hover span {
+        padding-right: 25px;
+    }
+
+    &:hover span::after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+/* Styles */
+
+/* wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.6)), url(/img/fone.jpg) repeat;
+}
+
+/* container, limits the width of content part */
+.container {
+    margin: 0 auto;
+    max-width: 1500px;
+
+    /* Media-quiries */
+
+    @media screen and (min-width: 0px) {
+        max-width: none;
+    }
+
+    @media screen and (min-width: 320px) {
+        max-width: 630px;
+    }
+
+    @media screen and (min-width: 640px) {
+        max-width: 1014px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        max-width: 1270px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        max-width: 1500px;
+    }
+}
+
+/* main */
+.main {
+    flex: 1 1 auto;
+    color: $primary-color;
+    margin: 77px 0 0 0;
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main-screen {
+    }
+
+    &__main-title {
+    }
+
+    &__main-video {
+    }
+
+    &__main-info {
+        /* Media-quiries */
+        @media screen and (min-width: 0px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+        }
+    }
+
+    &__main-conclusion {
+        /* Media-quiries */
+        @media screen and (min-width: 0px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+        }
+    }
+
+    /* Media-quiries */
+    @media screen and (min-width: 0px) {
+        margin: 50px 0 0 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 77px 0 0 0;
+    }
+}
+
+/* main constituens */
+
+/* main-screen */
+.main-screen {
+    &__row {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__image {
+        flex: 0 0 100%;
+        max-height: 600px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__top-left-text {
+        max-width: 350px;
+        font-size: 28px;
+        line-height: 36px;
+        top: 10%;
+        left: 8%;
+
+        animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+            font-size: 22px;
+            max-width: 250px;
+            line-height: 24px;
+
+            animation: top-left-text-emergence-767 3s ease 1 normal 0s forwards;
+        }
+
+        @media screen and (min-width: 960px) {
+            font-size: 28px;
+            max-width: 350px;
+            line-height: 36px;
+            animation: top-left-text-emergence-960 3s ease 1 normal 0s forwards;
+        }
+    }
+
+    &__bottom-left-text {
+        max-width: 200px;
+        font-size: 22px;
+        bottom: 23%;
+        left: 12%;
+
+        animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0) {
+            font-size: 20px;
+
+            animation: bottom-left-text-emergence-0 3s ease normal 0.8s forwards;
+        }
+
+        @media screen and (min-width: 767px) {
+            font-size: 22px;
+
+            animation: bottom-left-text-emergence-767 3s ease 1 normal 1.2s forwards;
+        }
+
+        @media screen and (min-width: 960px) {
+            font-size: 22px;
+            animation: bottom-left-text-emergence-960 3s ease 1 normal 1.2s forwards;
+        }
+    }
+
+    &__right-text {
+        max-width: 230px;
+        font-size: 22px;
+        line-height: 30px;
+        top: 20%;
+        right: 7%;
+
+        animation: right-text-emergence-960 3s ease 1 normal 0.8s forwards;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+            font-size: 20px;
+            line-height: 20px;
+
+            animation: right-text-emergence-767 3s ease normal 0.8s forwards;
+        }
+
+        @media screen and (min-width: 960px) {
+            font-size: 22px;
+            line-height: 30px;
+            animation: right-text-emergence-960 3s ease normal 0.8s forwards;
+        }
+    }
+
+    /* Text animation */
+
+    /* top-left-text-emergence */
+    /* top-left-text animation for min-width: 767px*/
+    @keyframes top-left-text-emergence-767 {
+        0% {
+            opacity: 0;
+            top: 0%;
+            left: 5%;
+        }
+        100% {
+            opacity: 1;
+            top: 15%;
+            left: 5%;
+        }
+    }
+
+    /* top-left-text animation for min-width: 960px*/
+    @keyframes top-left-text-emergence-960 {
+        0% {
+            opacity: 0;
+            top: 0%;
+            left: 8%;
+        }
+        100% {
+            opacity: 1;
+            top: 10%;
+            left: 8%;
+        }
+    }
+
+    /* bottom-left-text-emergence */
+    /* bottom-left-text animation for min-width: 0px*/
+    @keyframes bottom-left-text-emergence-0 {
+        0% {
+            opacity: 0;
+            top: 0%;
+            left: 3%;
+        }
+        100% {
+            opacity: 1;
+            top: 18%;
+            left: 3%;
+        }
+    }
+
+    /* bottom-left-text animation for min-width: 767px*/
+    @keyframes bottom-left-text-emergence-767 {
+        0% {
+            opacity: 0;
+            bottom: 23%;
+            left: 0%;
+        }
+        100% {
+            opacity: 1;
+            bottom: 23%;
+            left: 7%;
+        }
+    }
+
+    /* bottom-left-text animation for min-width: 960px*/
+    @keyframes bottom-left-text-emergence-960 {
+        0% {
+            opacity: 0;
+            bottom: 23%;
+            left: 0%;
+        }
+        100% {
+            opacity: 1;
+            bottom: 23%;
+            left: 12%;
+        }
+    }
+
+    /* right-text-emergence */
+    /* right-text-emergence animation for min-width: 767px*/
+    @keyframes right-text-emergence-767 {
+        0% {
+            opacity: 0;
+            top: 10%;
+            right: 0%;
+        }
+        100% {
+            opacity: 1;
+            top: 10%;
+            right: 3%;
+        }
+    }
+
+    /* right-text-emergence animation for min-width: 960px*/
+    @keyframes right-text-emergence-960 {
+        0% {
+            opacity: 0;
+            top: 20%;
+            right: 0%;
+        }
+        100% {
+            opacity: 1;
+            top: 20%;
+            right: 6%;
+        }
+    }
+}
+
+/* main-title, also this contains a description of the animation icon-emergence*/
+.main-title {
+    &__row {
+        display: flex;
+    }
+
+    &__picture {
+        flex: 0 0 31%;
+        max-height: 480px;
+        opacity: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+        }
+    }
+
+    &__body {
+        flex: 0 0 38%;
+        overflow: hidden;
+        max-height: 480px;
+
+        display: flex;
+        flex-direction: column;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            flex: 1 1 100%;
+        }
+
+        @media screen and (min-width: 767px) {
+            flex: 1 1 38%;
+        }
+    }
+
+    &__item {
+        flex: 1 1 42%;
+    }
+
+    &__title {
+        margin: 20px 0 10px 0;
+    }
+
+    &__icon {
+        flex: 0 0 50px;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+
+        animation: icon-emergence 3s ease 1 normal 2s forwards;
+    }
+
+    &__text {
+        margin: 10px 0 45px 0;
+        padding: 0 20px;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            margin: 0;
+        }
+
+        @media screen and (min-width: 767px) {
+            margin: 10px 0 45px 0;
+        }
+    }
+
+    &__outline {
+        /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+    }
+
+    &__image {
+        flex: 0 0 40%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            display: none;
+        }
+
+        @media screen and (min-width: 767px) {
+            display: block;
+        }
+    }
+
+    /* Icon-animation */
+    /* icon-emergemce */
+    @keyframes icon-emergence {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+/* main-video */
+.main-video {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__video {
+        position: relative;
+        max-width: 69%;
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            max-width: 100%;
+        }
+
+        @media screen and (min-width: 960px) {
+            max-width: 69%;
+        }
+    }
+
+    &__body {
+        flex: 0 0 31%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            flex: 0 0 100%;
+            margin: 0 0 15px 0;
+        }
+
+        @media screen and (min-width: 960px) {
+            flex: 0 0 31%;
+            margin: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin: 50px 0 10px 0;
+
+        /* Media-quiries */
+
+        @media screen and (min-width: 0px) {
+            margin: 20px 0 10px 0;
+        }
+
+        @media screen and (min-width: 960px) {
+            margin: 50px 0 10px 0;
+        }
+    }
+
+    &__icon {
+        flex: 0 0 50px;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+
+        animation: icon-emergence 3s ease 1 normal 2s forwards;
+    }
+
+    &__text {
+        margin: 10px 0;
+        padding: 0 20px;
+    }
+
+    &__outline {
+        /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+    }
+
+    &__button {
+        flex: 0 0 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        width: 190px;
+    }
+}
+
+/* main-info */
+.main-info {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        flex: 0 0 31%;
+    }
+
+    &__title {
+        margin: 50px 0 10px 0;
+    }
+
+    &__icon {
+        flex: 0 0 50px;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+
+        animation: icon-emergence 3s ease 1 normal 2s forwards;
+    }
+
+    &__text {
+        flex: 1 1 100%;
+        margin: 10px 0;
+        padding: 0 20px;
+    }
+
+    &__outline {
+        /* This is where the <span> tag is located, the properties of it`s pseudo-element are described in .main-card */
+    }
+
+    /* Media-quiries */
+    @media screen and (min-width: 0px) {
+        display: none;
+    }
+
+    @media screen and (min-width: 767px) {
+        display: block;
+    }
+}
+
+/* main-conclusion */
+.main-conclusion {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__options {
+        flex: 1 1 60%;
+        padding: 30px 15px 30px 20px;
+    }
+
+    &__list {
+        font-family: $primary-font;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+
+        li {
+            background: url(/img/icons/check-1.png) 0 0 no-repeat;
+            padding: 0 0 0 40px;
+            margin: 0 0 20px 0;
+        }
+
+        li:last-child {
+            margin: 0;
+        }
+    }
+
+    &__image {
+        flex: 0 0 31%;
+        height: 500px;
+
+        img {
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
