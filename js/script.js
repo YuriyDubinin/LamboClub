@@ -41,42 +41,43 @@ function postData(form) {
         form.append(statusMessage);
         showBlock(statusMessage);
 
-        const request = new XMLHttpRequest();
         const formData = new FormData(form);
-
-        request.open("POST", "server.php");
-        request.setRequestHeader("Content-type", "application/json");
 
         const object = {};
 
+        //converting FormData to JSON
         formData.forEach((value, key) => {
             object[key] = value;
         });
 
-        const json = JSON.stringify(object);
-
-        request.send(json);
-
-        request.addEventListener("load", () => {
-            if (request.status === 200) {
-                console.log(request.response);
+        fetch("server.php", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(object),
+        })
+            .then((data) => data.text())
+            .then((data) => {
+                console.log(data);
                 statusMessage.textContent = message.success;
-                form.reset();
 
                 setTimeout(() => {
                     statusMessage.remove();
                     showBlock(prevModalDialog);
                 }, 3000);
-            } else {
+            })
+            .catch(() => {
                 statusMessage.textContent = message.failure;
 
                 setTimeout(() => {
-                    form.reset();
                     statusMessage.remove();
                     showBlock(prevModalDialog);
                 }, 6000);
-            }
-        });
+            })
+            .finally(() => {
+                form.reset();
+            });
     });
 }
 
