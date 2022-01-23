@@ -50,7 +50,7 @@ function postData(form) {
             object[key] = value;
         });
 
-        fetch("server.php", {
+        fetch("http://localhost:3000/requests", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
