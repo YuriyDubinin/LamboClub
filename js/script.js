@@ -28,8 +28,21 @@ function hideBlock(block) {
     block.classList.add("hide");
 }
 
-//responsible to the sending data from form to the server
-function postData(form) {
+//responsible to the bind data from form to the server
+const postData = async (url, data) => {
+    const res = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json",
+        },
+        body: data,
+    });
+
+    return await res.json();
+};
+
+//responsible to the bind data from form to the server
+function bindPostData(form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         hideBlock(prevModalDialog);
@@ -43,21 +56,10 @@ function postData(form) {
 
         const formData = new FormData(form);
 
-        const object = {};
-
         //converting FormData to JSON
-        formData.forEach((value, key) => {
-            object[key] = value;
-        });
+        const jsonData = JSON.stringify(Object.fromEntries(formData.entries()));
 
-        fetch("http://localhost:3000/requests", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(object),
-        })
-            .then((data) => data.text())
+        postData("http://localhost:3000/requests", jsonData)
             .then((data) => {
                 console.log(data);
                 statusMessage.textContent = message.success;
@@ -82,4 +84,4 @@ function postData(form) {
 }
 
 //execution
-postData(form);
+bindPostData(form);

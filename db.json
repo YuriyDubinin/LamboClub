@@ -6,6 +6,18 @@
       "mail": "blablabla@gmail.com",
       "message": "wqeqddasdasd",
       "id": 1
+    },
+    {
+      "name": "Юрий",
+      "mail": "example@gmail.com",
+      "message": "Text for test",
+      "id": 2
+    },
+    {
+      "name": "Nastya",
+      "mail": "blablabla@gmail.comфa",
+      "message": "mew mew mew",
+      "id": 3
     }
   ]
 }
