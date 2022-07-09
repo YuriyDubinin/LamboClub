@@ -1,11 +1,11 @@
-$(document).ready(function () {
-    $(".header__burger").click(function (event) {
-        $(".header__burger,.header__navigation").toggleClass("active");
-        $("body").toggleClass("lock");
-    });
+//burger-menu
+document.querySelector(".header__burger").addEventListener("click", () => {
+    document.querySelector(".header__burger").classList.toggle("active");
+    document.querySelector(".header__navigation").classList.toggle("active");
+    document.querySelector("body").classList.toggle("lock");
 });
 
-/* form */
+//form
 //declaration
 const form = document.querySelector("form");
 const formBlock = document.querySelector(".footer__item");
@@ -28,7 +28,7 @@ function hideBlock(block) {
     block.classList.add("hide");
 }
 
-//responsible to the bind data from form to the server
+//responsible to the post data from form to the server
 const postData = async (url, data) => {
     const res = await fetch(url, {
         method: "POST",
