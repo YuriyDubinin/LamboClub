@@ -22,7 +22,7 @@ Special section for club members.
 ## Setup
 
 ```bash
-$ git clone https://github.com/YuriDubinin/LamboClub.git
+$ git clone https://github.com/YuriyDubinin/LamboClub.git
 $ cd LamboClub
 $ npx json-server db.json
 ```
